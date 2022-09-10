@@ -1,0 +1,32 @@
+@import "~bootstrap/scss/bootstrap";
+$navbar-box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.2);
+$container-border: solid 0.3px grey;
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+#App {
+  display: grid;
+  grid-template: {
+    columns: [col1] 20vw [col2] 80vw;
+    rows: [row1] 15vh [row2] 85vh;
+  }
+}
+
+.logo-container {
+  border: $container-border;
+  // box-shadow: $navbar-box-shadow;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  // box-shadow: $navbar-box-shadow;
+}
+
+.sidebar-container {
+  border: $container-border;
+}
