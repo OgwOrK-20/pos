@@ -13,6 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import SideBar from './SideBar';
+import LogOutButton from './LogOutButton';
 
 const drawerWidth = 210;
 
@@ -126,7 +127,9 @@ export default function MiniDrawer(props) {
                     <SideBar open={open} />
                 </List>
                 <Divider />
-
+                <List>
+                    <LogOutButton open={open} />
+                </List>
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />

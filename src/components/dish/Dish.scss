@@ -1,0 +1,24 @@
+.dish-container {
+  display: grid;
+  height: 30rem;
+  grid-template-rows: 3rem repeat(2, 12rem) 5rem;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 35px;
+  row-gap: 25px;
+  .dish-top-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+
+  .dish-tab {
+    transition: transform 200ms;
+    cursor: pointer;
+  }
+
+  .dish-tab:hover {
+    transform: translateY(-5px);
+  }
+}

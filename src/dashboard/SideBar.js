@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 function SideBar(props) {
     return <React.Fragment>
         {sidebar_data.map((item) => {
+            // this is where the links are set up
             return <ListItem key={JSON.stringify(item.name)} disablePadding sx={{ display: 'block' }} component={Link} to={item.name}>
                 <ListItemButton
                     sx={{

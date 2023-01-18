@@ -4,12 +4,23 @@ import { BrowserRouter } from "react-router-dom";
 import Dashboard from "./dashboard/Dashboard";
 import "./App.scss"
 import router from "./router";
-function App() {
-  return <BrowserRouter>
-    <Dashboard>
-      {router}
-    </Dashboard>
-  </BrowserRouter>
+import { connect } from "react-redux";
+import SignIn from "./starter/Signin";
+
+const mapStateToProps = (state) => {
+  return { user: state.user }
 }
 
-export default App;
+
+function App(props) {
+  const isLogin = localStorage.getItem('token') !== null
+  console.log(isLogin)
+  return (
+    isLogin ? <BrowserRouter>
+      <Dashboard>
+        {router}
+      </Dashboard>
+    </BrowserRouter> : <SignIn></SignIn>)
+}
+
+export default connect(mapStateToProps, {})(App);

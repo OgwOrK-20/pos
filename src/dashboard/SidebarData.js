@@ -27,7 +27,7 @@ const sidebar_data = [
         icon: <TimelineIcon></TimelineIcon>,
     },
     {
-        name: "settings",
+        name: "Settings",
         icon: <SettingsIcon></SettingsIcon>
     }
 ];
