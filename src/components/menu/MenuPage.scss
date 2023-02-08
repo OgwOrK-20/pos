@@ -1,26 +1,21 @@
 .menuPage-container {
-  height: 100%;
+  height: 85vh;
+
   .category-container {
     float: left;
-    width: 35%;
+    width: 30%;
     height: 100%;
-    overflow: auto;
+    overflow-y: auto;
     .category-list-item {
       margin: 10px 0px 10px;
       height: 80px;
-      width: 80%;
+      width: 89%;
     }
-  }
-  .category-dish-container {
-    float: right;
-    width: 65%;
-    height: 100%;
-    overflow: auto;
   }
 }
 @keyframes slideInFromTop {
   0% {
-    transform: translateY(-50%);
+    transform: translateY(-45%);
   }
   100% {
     transform: translateY(0);
@@ -30,23 +25,34 @@
 .category-list-item-edit {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 90%;
   animation: 0.15s ease 0s 1 slideInFromTop;
   .category-list-item-edit-item {
     margin: 5px 0 10px;
   }
+  .category-list-item-edit-item-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
 }
 
 .category-dish-container {
+  float: right;
+  width: 65%;
+  height: 100%;
+  overflow-y: auto;
   display: grid;
-  height: 30rem;
-  grid-template-rows: repeat(2, 12rem);
-  grid-template-columns: repeat(4, 1fr);
+  // height: 30rem;
+  grid-auto-rows: 16rem;
+  // grid-template-rows: repeat(2, 16rem);
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 35px;
   row-gap: 25px;
+
   .display-tab {
-    transition: transform 200ms;
-    cursor: pointer;
+    transition: transform 200ms !important;
+    // cursor: pointer;
     border-radius: 10px;
     .image-holder {
       height: 40%;
@@ -54,5 +60,41 @@
   }
   .display-tab:hover {
     transform: translateY(-5px);
+  }
+  .add-display-tab {
+    display: flex;
+    .display-tab-add-icon {
+      margin: auto;
+    }
+  }
+  .add-display-tab:hover {
+    .display-tab-add-icon {
+      color: black;
+    }
+  }
+}
+
+.menu-category-popover {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px;
+}
+
+.dish-display-container {
+  height: 75vh;
+  width: 80vw;
+  overflow-y: auto;
+  display: grid;
+  grid-auto-rows: 12rem;
+  // grid-template-rows: repeat(2, 16rem);
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 35px;
+  row-gap: 25px;
+  .dish-display-tab {
+    cursor: pointer;
+  }
+  .selected-display-tab {
+    outline: 2px solid #3f50b5;
   }
 }

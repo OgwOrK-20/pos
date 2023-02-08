@@ -1,0 +1,36 @@
+// used in Menu.jsx Dish.jsx MenuTab.jsx
+.menu-edit-form {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  .menu-edit-form-item {
+    margin: 10px;
+  }
+  .image-selection {
+    display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    .image-selection-buttons {
+      display: flex;
+      flex-direction: column;
+      margin-left: 50px;
+    }
+    .create-menu-pic {
+      margin-top: 15px;
+    }
+    .delete-menu-pic {
+      margin-top: 15px;
+    }
+    .preview-image {
+      position: relative;
+      left: 200px;
+      margin-top: 15px;
+      max-width: 150px;
+      max-height: 150px;
+    }
+  }
+}
+
+.menu-edit-form-item-name {
+  width: 45%;
+}

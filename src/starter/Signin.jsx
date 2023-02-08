@@ -14,6 +14,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { connect } from "react-redux";
 import { userLogin } from "../actions/index";
+import FeedbackModal from "../components/utilities/FeedbackModal";
 
 function Copyright(props) {
   return (
@@ -119,6 +120,7 @@ function SignIn(props) {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
+      <FeedbackModal></FeedbackModal>
     </ThemeProvider>
   );
 }

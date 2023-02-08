@@ -33,6 +33,17 @@ const menuReducer = (state = { menuData: [] }, action) => {
     }
 }
 
+const dishCategoryReducer = (state = { dishCategoryData: [] }, action) => {
+    switch (action.type) {
+        case "GET_DISH_CATEGORY_DATA":
+            return { ...state, dishCategoryData: action.payload }
+        // case "UPDATE_DISH_CATEGORY_DATA":
+        //     return { ...state, dishCategoryData: action.payload }
+        default:
+            return state
+    }
+}
+
 const userReducer = (state = { isLogin: false, userId: null }, action) => {
     switch (action.type) {
         case "USER_LOGIN":
@@ -53,11 +64,25 @@ const dishReducer = (state = { dishData: [] }, action) => {
     }
 }
 
+const feedbackReducer = (state = { trigger: false, hasError: false, message: "" }, action) => {
+    switch (action.type) {
+        case "SET_FEEDBACK":
+            return { ...state, trigger: true, hasError: action.payload.hasError, message: action.payload.message || "Something is wrong, please try again later" }
+        case 'RESET_FEEDBACK':
+            return { ...state, trigger: false, message: "" }
+        default:
+            return state
+    }
+}
+
+
 
 export default combineReducers({
     createMenu: createMenuReducer,
     menu: menuReducer,
     user: userReducer,
     dish: dishReducer,
-    popUp: popUpReducer
+    dishCategory: dishCategoryReducer,
+    popUp: popUpReducer,
+    feedback: feedbackReducer
 })

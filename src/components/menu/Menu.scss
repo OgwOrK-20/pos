@@ -2,7 +2,7 @@
   display: grid;
   height: 30rem;
   grid-template-rows: 3rem;
-  grid-auto-rows: 15rem;
+  grid-auto-rows: 16rem;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 35px;
   row-gap: 25px;
@@ -22,6 +22,7 @@
       height: 40%;
     }
   }
+
   .display-tab:hover {
     transform: translateY(-5px);
   }

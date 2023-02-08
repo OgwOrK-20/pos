@@ -1,8 +1,9 @@
 .dish-container {
   display: grid;
   height: 30rem;
-  grid-template-rows: 3rem repeat(2, 12rem) 5rem;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 3rem;
+  grid-auto-rows: 16rem;
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 35px;
   row-gap: 25px;
   .dish-top-bar {
@@ -12,13 +13,26 @@
     grid-column-start: 1;
     grid-column-end: -1;
   }
-
-  .dish-tab {
-    transition: transform 200ms;
-    cursor: pointer;
+  .display-tab {
+    transition: transform 200ms !important;
+    // cursor: pointer;
+    border-radius: 10px;
+    .image-holder {
+      height: 40%;
+    }
   }
-
-  .dish-tab:hover {
+  .display-tab:hover {
     transform: translateY(-5px);
+  }
+  .add-display-tab {
+    display: flex;
+    .display-tab-add-icon {
+      margin: auto;
+    }
+  }
+  .add-display-tab:hover {
+    .display-tab-add-icon {
+      color: black;
+    }
   }
 }

@@ -1,0 +1,11 @@
+.alert-popup-container {
+  z-index: 9999;
+  position: absolute;
+  width: 30vw;
+  left: 2vw;
+
+  .alert-popup {
+    top: 5rem;
+    z-index: 9999;
+  }
+}

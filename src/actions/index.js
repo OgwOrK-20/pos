@@ -19,7 +19,13 @@ export const getMenuDataFromDB = (userId) => async dispatch => {
     try {
         menuData = await axios.get(`http://localhost:4000/api/menu/${userId}`)
     } catch (error) {
-        return error
+        return dispatch({
+            type: "SET_FEEDBACK",
+            payload: {
+                hasError: true,
+                message: error.response ? error.response.message.data : "Something is wrong please try it again later"
+            }
+        })
     }
     dispatch({
         type: "GET_MENU_DATA",
@@ -31,15 +37,40 @@ export const getDishDataFromDB = (userId) => async dispatch => {
     let dishData
     try {
         dishData = await axios.get(`http://localhost:4000/api/dish/${userId}`)
-        console.log(dishData)
     } catch (error) {
-        return error
+        return dispatch({
+            type: "SET_FEEDBACK",
+            payload: {
+                hasError: true,
+                message: error.response ? error.response.message.data : "Something is wrong please try it again later"
+            }
+        })
     }
     dispatch({
         type: "GET_DISH_DATA",
         payload: dishData.data.dishes
     })
 }
+
+export const getDishCategoryFromDB = (menuId) => async dispatch => {
+    let dishCategoryData
+    try {
+        dishCategoryData = await axios.get(`http://localhost:4000/api/dishCategory/${menuId}`)
+    } catch (error) {
+        return dispatch({
+            type: "SET_FEEDBACK",
+            payload: {
+                hasError: true,
+                message: error.response ? error.response.message.data : "Something is wrong please try it again later"
+            }
+        })
+    }
+    dispatch({
+        type: "GET_DISH_CATEGORY_DATA",
+        payload: dishCategoryData.data.dishCategories
+    })
+}
+
 
 
 export const userLogin = (email, password) => async (dispatch, getState) => {
@@ -49,7 +80,14 @@ export const userLogin = (email, password) => async (dispatch, getState) => {
     try {
         res = await axios.post("http://localhost:4000/api/user/login", { email: email, password: password })
     } catch (error) {
-        return error
+        return dispatch({
+            type: "SET_FEEDBACK",
+            payload: {
+                hasError: true,
+                message: error.response ? error.response.message.data : "Something is wrong please try it again later"
+            }
+        })
+
     }
     console.log(res.data)
     const userId = res.data.userId
@@ -68,5 +106,23 @@ export const userLogOut = () => {
     localStorage.clear()
     return {
         type: "USER_LOGOUT"
+    }
+}
+
+
+export const setFeedback = (hasError, message) => {
+    console.log(123)
+    return {
+        type: "SET_FEEDBACK",
+        payload: {
+            hasError: hasError,
+            message: message
+        }
+    }
+}
+
+export const resetFeedback = () => {
+    return {
+        type: "RESET_FEEDBACK"
     }
 }
