@@ -79,7 +79,7 @@ function MenuTab(props) {
       <Link to={menuPage.id} state={{ menuPage: menuPage }}>
         <CardMedia
           component="img"
-          image="/pizza.jpg"
+          image={`/${menuPage.name}.jpeg`}
           sx={{ height: 110 }}
         ></CardMedia>
         <CardContent>

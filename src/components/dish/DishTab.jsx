@@ -49,7 +49,7 @@ function DishTab(props) {
     <Card className="display-tab">
       <CardMedia
         component="img"
-        image="/pizza.jpg"
+        image={`/${dishPage.name}.jpeg`}
         sx={{ height: 110 }}
       ></CardMedia>
       <CardContent>

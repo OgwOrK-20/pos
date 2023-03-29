@@ -20,11 +20,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import React from "react";
 import "./MenuPage.scss";
 import { useState } from "react";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
-import PopUpPage from "../utilities/PopUpPage";
-import axios from "axios";
-import { useSubmitForm } from "../../hooks";
+import LocalPizzaIcon from "@mui/icons-material/LocalPizza";
 
 // the tab in the left part of menu detail page
 function MenuCategoryTab(props) {
@@ -109,7 +105,9 @@ function MenuCategoryTab(props) {
           </DialogActions>
         </Dialog>
         <ListItemAvatar>
-          <Avatar></Avatar>
+          <Avatar>
+            <LocalPizzaIcon />
+          </Avatar>
         </ListItemAvatar>
         <ListItemText
           primary={`${name}`}

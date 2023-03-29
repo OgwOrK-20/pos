@@ -22,8 +22,8 @@ function MenuDishTab(props) {
     <Card className="display-tab">
       <CardMedia
         component="img"
-        image="/pizza.jpg"
-        sx={{ height: 110 }}
+        image={`/${dish.name}.jpeg`}
+        sx={{ height: 120 }}
       ></CardMedia>
       <CardContent>
         <Typography variant="h6" gutterBottom>

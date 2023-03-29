@@ -280,7 +280,7 @@ function MenuPage(props) {
                 >
                   <CardMedia
                     component="img"
-                    image="/pizza.jpg"
+                    image={`/${dishPage.name}.jpeg`}
                     sx={{ height: 95 }}
                   ></CardMedia>
                   <CardContent>

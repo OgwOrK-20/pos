@@ -112,7 +112,7 @@ export default function MiniDrawer(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Mini variant drawer
+                        Restaurant Dashboard
                     </Typography>
                 </Toolbar>
             </AppBar>
